@@ -1,11 +1,5 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
+﻿using OpenQA.Selenium.Remote;
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AppiumSandbox
 {
@@ -23,9 +17,7 @@ namespace AppiumSandbox
                 const string webDriverUrl = @"http://127.0.0.1:4723";
 
                 capabilities.SetCapability("app", appId);
-                var calcSession = new RemoteWebDriver(new Uri(webDriverUrl), capabilities);
-                calcSession.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
-                calcSession.Manage().Window.Position = new Point(0,0);                
+                var calcSession = new RemoteWebDriver(new Uri(webDriverUrl), capabilities);                
                 _calcWrapper = new CalcObjectModel(calcSession);
             }
 

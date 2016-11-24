@@ -38,8 +38,8 @@ namespace AppiumSandbox
 
         public void SetToStandardMode()
         {
-            (_webDriver as IFindsByXPath).FindElementByXPath("//Button[starts-with(@Name, \"Menu\")]").Click();
-            (_webDriver as IFindsByXPath).FindElementByXPath("//ListItem[@Name=\"Standard Calculator\"]").Click();
+            _webDriver.FindElement(By.XPath("//Button[starts-with(@Name, \"Menu\")]")).Click();
+            _webDriver.FindElement(By.XPath("//ListItem[@Name=\"Standard Calculator\"]")).Click();
         }
 
         public decimal GetResult()
@@ -57,7 +57,7 @@ namespace AppiumSandbox
             }
             else
             {
-                var control = (_webDriver as IFindsByXPath).FindElementByXPath(xPath);
+                var control = _webDriver.FindElement(By.XPath(xPath));
                 if (!noCache) _controlCache.Add(xPath, control);
 
                 return control;
@@ -71,7 +71,7 @@ namespace AppiumSandbox
             }
             else
             {
-                var control = (_webDriver as IFindsByName).FindElementByName(name);
+                var control = _webDriver.FindElement(By.Name(name));
                 if (!noCache) _controlCache.Add(name, control);
 
                 return control;
