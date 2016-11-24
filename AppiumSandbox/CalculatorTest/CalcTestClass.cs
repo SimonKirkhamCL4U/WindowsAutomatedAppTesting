@@ -16,6 +16,7 @@ namespace AppiumSandbox
         public void SetUp()
         {
             _calcWrapper = CalcFactory.GetCalcObjectModel();
+            _calcWrapper.SetToStandardMode();
         }
 
         [Test]

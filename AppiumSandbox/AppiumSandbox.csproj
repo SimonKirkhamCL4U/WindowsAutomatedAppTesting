@@ -68,6 +68,7 @@
     <Compile Include="CalculatorTest\CalcFactory.cs" />
     <Compile Include="CalculatorTest\CalcTestClass.cs" />
     <Compile Include="CalculatorTest\CalcObjectModel.cs" />
+    <Compile Include="CalculatorTest\TestingTheTest.cs" />
     <Compile Include="HorizonTest\HorizonObjectModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

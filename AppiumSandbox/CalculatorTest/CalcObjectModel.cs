@@ -35,6 +35,13 @@ namespace AppiumSandbox
         public IWebElement MultiplyButton { get { return GetByName("Multiply by"); } }
         public IWebElement EqualsButton { get { return GetByName("Equals"); } }
 
+
+        public void SetToStandardMode()
+        {
+            (_webDriver as IFindsByXPath).FindElementByXPath("//Button[starts-with(@Name, \"Menu\")]").Click();
+            (_webDriver as IFindsByXPath).FindElementByXPath("//ListItem[@Name=\"Standard Calculator\"]").Click();
+        }
+
         public decimal GetResult()
         {            
             var displayText = GetByXPath("//Text[@AutomationId=\"CalculatorResults\"]", true).Text;
